@@ -1,0 +1,58 @@
+#############docs :https://www.atlassian.com/git/tutorials/setting-up-a-repository############
+git config:
+
+
+git config --global user.name
+git config --global user.email
+
+>git init : initailises an empty git repo in a folder .
+
+>git status : tells us the status of the branch
+ 
+>>typs of branch 
+>master 
+why do we create a branch : so that the main code is not at all affected .
+
+>git branch dev   --> create local repo branch
+>git checkout -b <new-branch>
+
+
+>{git add file name} to add file from untracked stage to tracked stage . "git add . : to add all the files "
+
+>>git commit -m "asdfg" * : to save our work .and keep a track on it .
+
+>> git restore file name : it will restore the file .
+
+>> git restore --staged filename : to untrack the file which we have added.
+
+>>git rm --cached abc.txt
+
+
+>>git log  :logs about the changes we made in the git folder .
+
+>> git revert {log mein jo commit id hai vo } and we can restore our file which were commited.
+
+git branch -r <branch>  --> checkout to remote repo branch
+git switch -c <branch>  origin/abc  --> switch to remote branch
+<make some file, do some work>
+git log     ---> to check heads of branch
+git merge main     ---> already up to date
+git checkout -     ---> Go to main and then merge other branch
+git remote: add origin(adding new remote) Vs. set-url origin(editing existing remote)
+
+git push remote origin
+git pull remote origin --> copies data from remote to local /fetch --> reports changes between local & remote
+git push remote origin --allow-unrelated-histories
+git clone <remote-repo>
+
+git stash save / push
+git stash show/list
+git checkout -
+git status
+git checkout -
+git status
+git stash apply
+git stash drop
+
+git clean
+git diff
