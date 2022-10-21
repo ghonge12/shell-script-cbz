@@ -1,0 +1,46 @@
+
+#git --amend -m "modified_commit_message"    --> To change last bad commit message
+#git --amend    ---> To add a new file in the last commit.
+
+#git log --stat   --> To get statistics of commits
+#git clean -df  ---> it removes any untracked directories and files.
+#git revert <last commit> --> used to rollback the changes in existing commits(Public files)
+#git reset     --> used to revert changes before commit is made (private files)
+#git bisect start/bad/good
+#git squash
+git rebase master --interactive
+git commit --fixup <Hashing>
+git commit --squash <hashing>
+git clean -df
+git checkout -    -->To go back to previous branch
+git config --global init.defaultBranch main   --> to make default branch main from master for every new repo
+git branch -m main  --> to change branch name if you have already commits in master branch
+
+
+
+#git reflog  --> To get all commit history
+If a commit is made into the wrong branch
+1. checkout to the branch where you made a commit and run
+#git log
+now pick 6-7 characters from the commit id
+2. checkout to the branch where the commit wanted to be
+#git cherry-pick <6-7 characters of Commit Hash>
+now check if the commit is copied or not
+#git log
+
+cherry-pick doesnt delete the commit from previos branch
+3. Now remove the previous commit from wrong branch by checking out to it
+#git reset --soft <6-7 characters of hash of a commit upto wich we want to keep commits>
+
+but this will remove only the commit, not remove objects from staging area
+to remove from branch completely, run without any options
+#git reset <6-7 characters of hash of a last commit>
+
+to remove modified/unstaged files by hard reset
+#git reset --hard <6-7 characters of hash of a last commit>
+
+Short status flags are:
+?? - Untracked files
+A - Files added to stage
+M - Modified files
+D - Deleted files
